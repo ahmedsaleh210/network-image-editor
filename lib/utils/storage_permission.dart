@@ -5,13 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:network_image_editor/utils/dialog.dart';
 
 import 'package:permission_handler/permission_handler.dart';
-class PermissionUtil {
-  /// 安卓权限
+class PrmissionUtil {
   static List<Permission> androidPermissions = <Permission>[
     Permission.storage
   ];
 
-  /// ios权限
   static List<Permission> iosPermissions = <Permission>[
     Permission.storage
   ];
