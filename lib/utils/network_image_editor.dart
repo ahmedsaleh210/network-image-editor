@@ -31,7 +31,7 @@ class NetworkImageEditor {
     }
   }
 
-  FutureOr<Uint8List?> initialize(
+  Future<Uint8List?> initialize(
       {required String imageUrl,
       SavedFileType? savedFileType = SavedFileType.image}) async {
     try {
