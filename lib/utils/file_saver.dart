@@ -55,8 +55,10 @@ class PDFSaver implements FileSaver {
 
   Future<void> _savePDF(pw.Document pdf) async {
     try {
+      final String fileName = DateTime.now().toIso8601String();
       final dir = await getExternalStorageDirectory();
-      final file = File('${dir?.path}/filename.pdf');
+      final file =
+          File('${dir?.path}/ "$fileName.pdf');
       final pdfBytes = await pdf.save();
 
       await file.writeAsBytes(pdfBytes.toList());
@@ -65,10 +67,10 @@ class PDFSaver implements FileSaver {
           pdfBytes,
         ],
         fileNameList: [
-          "${DateTime.now().toIso8601String()}.pdf",
+          "$fileName.pdf",
         ],
         mimeTypeList: [
-          "${DateTime.now().toIso8601String()}/pdf",
+          "$fileName/pdf",
         ],
       );
       log('Test Pdf ${dir?.path}');
